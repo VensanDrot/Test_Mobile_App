@@ -33,14 +33,14 @@ const styles = StyleSheet.create({
     },
     input_text: {
         fontSize: 24,
-        marginTop: 13,
+        marginTop: 10,
         color: color.black,
     },
     input: {
         borderWidth: 3,
         borderRadius: 6,
         height: 39,
-        marginTop: 5,
+        marginTop: 4,
         paddingVertical: 2,
         paddingHorizontal: 6,
         borderColor: color.blue,
@@ -59,6 +59,8 @@ const styles = StyleSheet.create({
     },
     error: {
         color: color.red,
+        fontSize: 17,
+        marginTop: 3,
     },
     //Nav bar display settings 
     nav_cont: {
@@ -66,7 +68,15 @@ const styles = StyleSheet.create({
         width: width,
         backgroundColor: color.yellow,
         justifyContent: "center",
-        alignContent: "stretch",
+        padding: 7,
+    },
+    nav_text: {
+        fontSize: 24,
+    },
+    nav_flex: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
     }
 });
 

@@ -16,6 +16,7 @@ export default function App() {
     const AuthStack = createStackNavigator();
     return ( 
        <SafeAreaProvider> 
+        {/* Set A Nav Bar */}
         <Nav></Nav>
         <NavigationContainer >
            

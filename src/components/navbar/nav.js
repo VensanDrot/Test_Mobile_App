@@ -1,9 +1,9 @@
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { SafeAreaView, Text, View } from 'react-native';
+import { SafeAreaView, Text, View, Image } from 'react-native';
 import styles from '../../../styles';
-import Login_page from '../../screens/login/Login_page';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
+import Group from "../svg/logo1.png"
+import color from '../../../color';
 
 
 function Nav() {
@@ -11,7 +11,10 @@ function Nav() {
     
   return (
     <View  style={[{marginTop:inset.top},styles.nav_cont]}>
-        <Text style={styles.bt_text}>dsads</Text>
+        <View style={styles.nav_flex}>
+            <Image source={Group} />
+            <Text style={styles.nav_text}>Каналсервис</Text>
+        </View>
     </View>
   );
 }

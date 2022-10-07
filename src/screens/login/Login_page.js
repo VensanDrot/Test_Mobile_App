@@ -19,12 +19,14 @@ const Login_page = () => {
     //err variables to handle input err
     const [Log_err, SetLog_err] = useState("");
     const [Pass_err, SetPass_err] = useState("");
+    const [Fail, SetFail] = useState("");
 
     //Submit function handler
     const OnSubmit = () => {
         //Clean err variable 
         SetLog_err("");
         SetPass_err("");
+        SetFail("");
 
         //console.log(login, ' ',password);
         //check for errors
@@ -36,9 +38,12 @@ const Login_page = () => {
             console.log('here');
             SetPass_err('Password is empty');
         }
-
+        
         if (login === userdata.Login && password === userdata.Password) {
             console.log('Working');
+        }
+        else if (login && password){
+            SetFail("Wrong Login Or Password");
         }
 
     }
@@ -54,7 +59,11 @@ const Login_page = () => {
             return <Text style={styles.error}>{Log_err}</Text>
         }
     }
-
+    const Check_Fail = () => {
+        if (Fail){
+            return <Text style={styles.error}>{Fail}</Text>
+        }
+    }
 
     return (
         <View style={styles.form}>
@@ -79,11 +88,12 @@ const Login_page = () => {
                  value={password}
                  secureTextEntry={true} 
                  />
-                 
+                 {Check_Fail()}
                 {/* Button */}
                 <Pressable onPress={OnSubmit} style={styles.button}>
                     <Text style={styles.bt_text}>Submit</Text>
                 </Pressable>
+                
 
             </View>
 
