@@ -3,7 +3,16 @@ import styles from '../../../styles';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View, TextInput, Pressable } from 'react-native';
 
+
+// Const User To Login
+const userdata = {
+    Login: 'SomeUser',
+    Password: 'SomePass',
+}
+
+
 const Login_page = () => {
+
     //variables for user input
     const [login, SetLogin] = useState("");
     const [password, SetPassword] = useState("");
@@ -11,7 +20,7 @@ const Login_page = () => {
     const [Log_err, SetLog_err] = useState("");
     const [Pass_err, SetPass_err] = useState("");
 
-
+    //Submit function handler
     const OnSubmit = () => {
         //Clean err variable 
         SetLog_err("");
@@ -27,6 +36,11 @@ const Login_page = () => {
             console.log('here');
             SetPass_err('Password is empty');
         }
+
+        if (login === userdata.Login && password === userdata.Password) {
+            console.log('Working');
+        }
+
     }
 
     // Error display functions 
@@ -46,6 +60,8 @@ const Login_page = () => {
         <View style={styles.form}>
             <Text style={styles.formText}>Authorization</Text>
             <View style={styles.inputform}>
+
+                {/* Login Fiels */}
                 <Text style={styles.input_text}>login</Text>
                 {Check_Log_Err()}
                 <TextInput 
@@ -53,6 +69,8 @@ const Login_page = () => {
                 onChangeText={(e)=> SetLogin(e)}
                 value={login}
                 />
+
+                {/* Password Fiels */}
                 <Text style={styles.input_text}>password</Text>
                 {Check_Pass_Err()}
                 <TextInput
@@ -61,11 +79,14 @@ const Login_page = () => {
                  value={password}
                  secureTextEntry={true} 
                  />
+                 
+                {/* Button */}
                 <Pressable onPress={OnSubmit} style={styles.button}>
                     <Text style={styles.bt_text}>Submit</Text>
                 </Pressable>
 
             </View>
+
         </View>
     )
 }

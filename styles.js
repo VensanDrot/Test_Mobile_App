@@ -1,11 +1,8 @@
 import { StyleSheet, Dimensions } from "react-native";
-
+import color from "./color"
 const { height, width } = Dimensions.get('window');
-const blue = "#27569C";
-const black = "#000";
-const grey = "#D9D9D9";
-const yellow = "#E4B062";
-const red = "#ED4337"
+
+
 
 
 const styles = StyleSheet.create({
@@ -22,13 +19,13 @@ const styles = StyleSheet.create({
         width: 290,
         borderWidth: 3,
         borderRadius: 6,
-        borderColor: blue,
+        borderColor: color.blue,
     },
     //login page content settings
     formText: {
         fontSize: 24,
         TOP: 30,
-        color: blue,
+        color: color.blue,
     },
     inputform: {
         width: 212,
@@ -37,22 +34,22 @@ const styles = StyleSheet.create({
     input_text: {
         fontSize: 24,
         marginTop: 13,
-        color: black,
+        color: color.black,
     },
     input: {
         borderWidth: 3,
         borderRadius: 6,
         height: 39,
-        marginTop: 7,
+        marginTop: 5,
         paddingVertical: 2,
         paddingHorizontal: 6,
-        borderColor: blue,
-        backgroundColor: grey,
+        borderColor: color.blue,
+        backgroundColor: color.grey,
     },
     button: {
-        backgroundColor: yellow,
+        backgroundColor: color.yellow,
         height: 43,
-        marginTop: 25,
+        marginTop: 24,
         borderRadius: 5,
         alignItems: "center",
         justifyContent: "center",
@@ -61,7 +58,15 @@ const styles = StyleSheet.create({
         fontSize: 24,
     },
     error: {
-        color: red,
+        color: color.red,
+    },
+    //Nav bar display settings 
+    nav_cont: {
+        height: 118,
+        width: width,
+        backgroundColor: color.yellow,
+        justifyContent: "center",
+        alignContent: "stretch",
     }
 });
 
