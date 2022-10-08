@@ -1,9 +1,9 @@
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import React from 'react';
 import { SafeAreaView, Text, View, Image } from 'react-native';
 import styles from '../../../styles';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Group from "../svg/logo1.png"
-import color from '../../../color';
+
 
 
 function Nav() {

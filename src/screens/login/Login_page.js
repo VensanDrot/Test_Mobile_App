@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState,useContext} from 'react'
 import styles from '../../../styles';
-import { StatusBar } from 'expo-status-bar';
 import { Text, View, TextInput, Pressable } from 'react-native';
-
+import { AuthContext } from '../../components/exports/context';
 
 // Const User To Login
 const userdata = {
@@ -12,7 +11,7 @@ const userdata = {
 
 
 const Login_page = () => {
-
+    const { signIn } = useContext(AuthContext);
     //variables for user input
     const [login, SetLogin] = useState("");
     const [password, SetPassword] = useState("");
@@ -40,7 +39,8 @@ const Login_page = () => {
         }
         
         if (login === userdata.Login && password === userdata.Password) {
-            console.log('Working');
+            signIn(login);
+            console.log('hee')
         }
         else if (login && password){
             SetFail("Wrong Login Or Password");
