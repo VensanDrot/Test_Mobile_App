@@ -38,7 +38,7 @@ export default function App() {
        <SafeAreaProvider> 
         <AuthContext.Provider value={authContext}>
         {/* Set A Nav Bar */}
-        <Nav></Nav>
+        <Nav data={UserToken}/>
         <NavigationContainer>
             {
                 UserToken ? (

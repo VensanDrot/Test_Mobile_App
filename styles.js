@@ -67,14 +67,15 @@ const styles = StyleSheet.create({
         height: 118,
         width: width,
         backgroundColor: color.yellow,
-        justifyContent: "center",
+        justifyContent: "space-between",
         padding: 7,
+        flexDirection: "row",
+        alignItems: "center",
     },
     nav_text: {
         fontSize: 24,
     },
     nav_flex: {
-        flex: 1,
         flexDirection: "row",
         alignItems: "center",
     },
