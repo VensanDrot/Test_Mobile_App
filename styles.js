@@ -77,6 +77,22 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "row",
         alignItems: "center",
+    },
+    //Main_Page_Containers
+    vi_cont: {
+        flex: 1,
+        flexDirection: "column",
+        width: 292,
+        height: 200,
+        borderWidth: 3,
+        borderRadius: 6,
+        borderColor: color.blue,
+        marginVertical: 10,
+        overflow: "hidden",
+    },
+    vi_text: {
+        fontSize: 16,
+        marginTop: 5,
     }
 });
 

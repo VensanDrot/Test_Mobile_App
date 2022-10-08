@@ -2,11 +2,13 @@ import React, {useState,useContext} from 'react'
 import styles from '../../../styles';
 import { Text, View, TextInput, Pressable } from 'react-native';
 import { AuthContext } from '../../components/exports/context';
+import { SetUserToken } from '../../components/exports/context';
+
 
 // Const User To Login
 const userdata = {
-    Login: 'SomeUser',
-    Password: 'SomePass',
+    Login: '1',
+    Password: '1',
 }
 
 
@@ -40,7 +42,6 @@ const Login_page = () => {
         
         if (login === userdata.Login && password === userdata.Password) {
             signIn(login);
-            console.log('hee')
         }
         else if (login && password){
             SetFail("Wrong Login Or Password");

@@ -20,6 +20,8 @@ export default function App() {
     const AuthStack = createStackNavigator();
     const [UserToken, SetUserToken] = useState(null);
 
+    
+    // functions signin && signout
     const authContext = useMemo(()=> {
         return {
             signIn: (data) => {
@@ -28,6 +30,7 @@ export default function App() {
             signOut: () => {
                 SetUserToken(null)
             },
+           
         }
     },[])
 
@@ -69,9 +72,3 @@ export default function App() {
         </SafeAreaProvider>
     );
 }
-/*
-<SafeAreaView style = { styles.container } >
-<Login_page />
-<StatusBar style = "auto" />
-</SafeAreaView>
-*/
