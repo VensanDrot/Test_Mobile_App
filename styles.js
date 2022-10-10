@@ -1,6 +1,6 @@
-import { StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
 import color from "./color"
-const { height, width } = Dimensions.get('window');
+
 
 
 
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     // main display settings
     form: {
         alignItems: "center",
-        marginVertical: height * 0.15,
+        marginVertical: color.height * 0.15,
         alignSelf: "center",
         height: 333,
         width: 290,
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         borderColor: color.blue,
     },
-    //login page content settings
+    //login page content 
     formText: {
         fontSize: 24,
         TOP: 30,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     //Nav bar display settings 
     nav_cont: {
         height: 118,
-        width: width,
+        width: color.width,
         backgroundColor: color.yellow,
         justifyContent: "space-between",
         padding: 7,
@@ -84,12 +84,14 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: "column",
         width: 292,
-        height: 200,
         borderWidth: 3,
         borderRadius: 6,
         borderColor: color.blue,
         marginVertical: 10,
         overflow: "hidden",
+        paddingHorizontal: 7,
+        paddingTop: 3,
+        paddingBottom: 5,
     },
     vi_text: {
         fontSize: 16,
