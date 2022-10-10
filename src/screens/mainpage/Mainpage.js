@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styles from "../../../styles";
-import { Text, View, TextInput, Pressable, ScrollView } from "react-native";
+import { Text, View, ScrollView, Image } from "react-native";
+import icon from "../../../assets/icon.png";
+import color from "../../../color";
 
 const Mainpage = () => {
-  //Variables
   const [Posts, SetPosts] = useState([]);
   const [Users, SetUsers] = useState([]);
+  const [Photos, SetPhotos] = useState();
 
-  // Select only 1 value from where userid 
+  //reduce posts 
   const gettingPost = (res) => {
     const arr = [];
-    const users = res.reduce((acc, curr) => {
+    const user = res.reduce((acc, curr) => {
       if (!acc.includes(curr.userId)) {
         arr.push(curr);
         acc.push(curr.userId);
@@ -18,17 +20,22 @@ const Mainpage = () => {
       return acc;
     }, []);
     SetPosts(arr);
+    // return arr;
   };
+
 
   // Get users
   const response = fetch("https://jsonplaceholder.typicode.com/users", {
     method: "get",
   }).then((res) => res.json());
-  
+
   // Get posts
   const res = fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "get",
   }).then((res) => res.json());
+
+
+
 
   //Put them to Users and Posts variable
   useEffect(() => {
@@ -38,22 +45,34 @@ const Mainpage = () => {
     res.then((data) => {
       gettingPost(data);
     });
+   
   }, []);
 
-  
+  const getPhoto = (id) => {
+    Photos.map((f) => {
+      if (f.albumId === id) {
+        console.log(f.url)
+        return (f.url)
+      }
+    })
+  }
+
   return (
-    <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: "center" }}>
-
+    <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: "center"}}  >
+      <View style={styles.flexer}>
       {Users.map((g) => {
-        return (
+        
 
+        return (
+         
           <View style={styles.vi_cont} key={g.id}>
-            
+            <Image style={styles.vi_image} source={{uri : "https://cdn.searchenginejournal.com/wp-content/uploads/2022/06/image-search-1600-x-840-px-62c6dc4ff1eee-sej-1280x720.png"}} />
+
             <Text style={styles.vi_text}>Autor: {g.name}</Text>
             <Text style={styles.vi_text}>Company: {g.company.name}</Text>
 
             <Text style={styles.vi_text}>
-              Title:{" "}
+              Title:
               {Posts.map((f) => {
                 if (f.userId === g.id) {
                   return f.title;
@@ -61,10 +80,18 @@ const Mainpage = () => {
               })}
             </Text>
 
+            <Text style={[styles.vi_text, styles.vi_body]} numberOfLines={4}>
+              Body:
+              {Posts.map((f) => {
+                if (f.userId === g.id) {
+                  return f.body;
+                }
+              })}
+            </Text>
           </View>
         );
       })}
-
+      </View>
     </ScrollView>
   );
 };

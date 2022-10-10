@@ -30,12 +30,6 @@ function Nav(user_state) {
     signOut();
   };
 
-  //Text display or no
-  const Text_Check = () => {
-    if (color.width > 500) {
-      return <Text style={styles.nav_text}>Каналсервис</Text>;
-    }
-  };
 
   /* Test Button
     <Button
@@ -50,7 +44,7 @@ function Nav(user_state) {
      
       <View style={styles.nav_flex}>
         <Icon />
-        <Text_Check />
+        <Text style={styles.nav_text}>Каналсервис</Text>
       </View>
 
       <Check />

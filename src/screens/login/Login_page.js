@@ -63,34 +63,46 @@ const Login_page = () => {
   };
 
   return (
+
     <View style={styles.form}>
       <Text style={styles.formText}>Authorization</Text>
+     
       <View style={styles.inputform}>
+
         {/* Login Fiels */}
+        <View style={styles.form_input_cont}>
         <Text style={styles.input_text}>login</Text>
-        {Check_Log_Err()}
         <TextInput
           style={styles.input}
           onChangeText={(e) => SetLogin(e)}
           value={login}
         />
+        </View>
+        {Check_Log_Err()}
 
         {/* Password Fiels */}
+        <View style={styles.form_input_cont}>
         <Text style={styles.input_text}>password</Text>
-        {Check_Pass_Err()}
         <TextInput
           style={styles.input}
           onChangeText={(e) => SetPassword(e)}
           value={password}
           secureTextEntry={true}
         />
+        </View>
+
+        {Check_Pass_Err()}
         {Check_Fail()}
+       
         {/* Button */}
         <Pressable onPress={OnSubmit} style={styles.button}>
           <Text style={styles.bt_text}>Submit</Text>
         </Pressable>
+        
       </View>
+
     </View>
+
   );
 };
 
