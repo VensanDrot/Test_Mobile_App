@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     // main display settings
     form: {
         alignItems: "center",
-        marginVertical: color.height * 0.15,
+        marginVertical: 28,
         alignSelf: "center",
         height: 333,
         width: 290,
@@ -90,13 +90,14 @@ const styles = StyleSheet.create({
         borderColor: color.blue,
         marginVertical: 10,
         overflow: "hidden",
-        paddingHorizontal:7,
-        paddingTop:3,
-        paddingBottom:5,
+        paddingHorizontal: 7,
+        paddingTop: 3,
+        paddingBottom: 5,
     },
     vi_text: {
         fontSize: 16,
-        marginTop: 5,
+        marginBottom: 17,
+        marginTop: 12,
     }
 });
 
