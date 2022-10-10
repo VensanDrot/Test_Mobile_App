@@ -61,12 +61,13 @@ const Mainpage = () => {
                         <Text style={styles.vi_text}>
                             Company: {g.company.name}
                         </Text>
-                
+
                         <Text style={styles.vi_text}>
-                            Title: {Posts[g.id-1].title}
+                            Title: {Posts[g.id - 1].title}
                         </Text>
-                        <Text style={styles.vi_text}>
-                            Body: {Posts[g.id-1].body}
+                        
+                        <Text style={styles.vi_text} numberOfLines={4}>
+                            Body: {Posts[g.id - 1].body}
                         </Text>
                     </View>
                 )
