@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Pressable, Text, View} from "react-native";
+import { Pressable, Text, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AuthContext } from "../exports/context";
 //Icons
@@ -30,7 +30,6 @@ function Nav(user_state) {
     signOut();
   };
 
-
   /* Test Button
     <Button
       onPress={Exit}
@@ -41,7 +40,6 @@ function Nav(user_state) {
 
   return (
     <View style={[{ marginTop: inset.top }, styles.nav_cont]}>
-     
       <View style={styles.nav_flex}>
         <Icon />
         <Text style={styles.nav_text}>Каналсервис</Text>

@@ -2,12 +2,11 @@ import React, { useState, useContext } from "react";
 import styles from "../../../styles";
 import { Text, View, TextInput, Pressable } from "react-native";
 import { AuthContext } from "../../components/exports/context";
-import { SetUserToken } from "../../components/exports/context";
 
 // Const User To Login
 const userdata = {
-  Login: "1",
-  Password: "1",
+  Login: "User",
+  Password: "12345678",
 };
 
 const Login_page = () => {
@@ -63,46 +62,41 @@ const Login_page = () => {
   };
 
   return (
-
     <View style={styles.form}>
       <Text style={styles.formText}>Authorization</Text>
-     
-      <View style={styles.inputform}>
 
+      <View style={styles.inputform}>
         {/* Login Fiels */}
         <View style={styles.form_input_cont}>
-        <Text style={styles.input_text}>login</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={(e) => SetLogin(e)}
-          value={login}
-        />
+          <Text style={styles.input_text}>login</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(e) => SetLogin(e)}
+            value={login}
+          />
         </View>
         {Check_Log_Err()}
 
         {/* Password Fiels */}
         <View style={styles.form_input_cont}>
-        <Text style={styles.input_text}>password</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={(e) => SetPassword(e)}
-          value={password}
-          secureTextEntry={true}
-        />
+          <Text style={styles.input_text}>password</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={(e) => SetPassword(e)}
+            value={password}
+            secureTextEntry={true}
+          />
         </View>
 
         {Check_Pass_Err()}
         {Check_Fail()}
-       
+
         {/* Button */}
         <Pressable onPress={OnSubmit} style={styles.button}>
           <Text style={styles.bt_text}>Submit</Text>
         </Pressable>
-        
       </View>
-
     </View>
-
   );
 };
 

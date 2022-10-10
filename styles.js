@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 import color from "./color";
 
 function MediaQuery() {
-    
   // for small devices
   if (color.width < 600) {
     const styles = StyleSheet.create({
@@ -27,6 +26,7 @@ function MediaQuery() {
         fontSize: 24,
         TOP: 30,
         color: color.blue,
+        fontWeight: "800",
       },
       inputform: {
         width: 212,
@@ -35,12 +35,14 @@ function MediaQuery() {
         fontSize: 24,
         marginTop: 10,
         color: color.black,
+        fontWeight: "800",
       },
       input: {
         borderWidth: 3,
         borderRadius: 6,
         height: 39,
         marginTop: 4,
+        fontSize: 20,
         paddingVertical: 2,
         paddingHorizontal: 6,
         borderColor: color.blue,
@@ -56,10 +58,12 @@ function MediaQuery() {
       },
       bt_text: {
         fontSize: 24,
+        fontWeight: "800",
       },
       error: {
         color: color.red,
         fontSize: 17,
+        fontWeight: "800",
         marginTop: 3,
       },
       //Nav bar display settings
@@ -98,13 +102,14 @@ function MediaQuery() {
         fontSize: 16,
         marginBottom: 17,
         marginTop: 12,
+        fontWeight: "800",
       },
       vi_image: {
-       display:'none',
+        display: "none",
       },
       vi_body: {
-        display:'none',
-      }
+        display: "none",
+      },
     });
     return styles;
   }
@@ -127,11 +132,14 @@ function MediaQuery() {
         fontSize: 24,
         TOP: 30,
         color: color.blue,
+        fontWeight: "800",
       },
       form_input_cont: {
         flexDirection: "row",
         marginVertical: 15,
         justifyContent: "space-between",
+        alignContent: "center",
+        alignItems: "center",
       },
       inputform: {
         width: 440,
@@ -141,12 +149,14 @@ function MediaQuery() {
       input_text: {
         fontSize: 24,
         color: color.black,
+        fontWeight: "800",
       },
       input: {
         width: 295,
         borderWidth: 3,
         borderRadius: 6,
-        height: 39,
+        height: 45,
+        fontSize: 20,
         paddingVertical: 2,
         paddingHorizontal: 6,
         borderColor: color.blue,
@@ -162,10 +172,12 @@ function MediaQuery() {
       },
       bt_text: {
         fontSize: 24,
+        fontWeight: "800",
       },
       error: {
         color: color.red,
         fontSize: 19,
+        fontWeight: "800",
       },
       //Nav bar display settings
       nav_cont: {
@@ -194,27 +206,29 @@ function MediaQuery() {
         borderColor: color.blue,
         marginVertical: 10,
         overflow: "hidden",
-        paddingHorizontal:22,
+        paddingHorizontal: 22,
         paddingTop: 25,
-        paddingBottom:24, 
-        marginHorizontal:15,
+        paddingBottom: 24,
+        marginHorizontal: 15,
       },
       vi_text: {
         fontSize: 16,
         marginBottom: 17,
         marginTop: 8,
+        fontWeight: "800",
+        fontWeight: "800",
       },
       vi_image: {
         width: 150,
-        height:150,
-        marginBottom:22,
+        height: 150,
+        resizeMode: "contain",
+        marginBottom: 22,
       },
-      flexer:{
-        flex:2,
-        flexDirection:"row",
-        flexWrap:"wrap",
-        justifyContent:"center",
-      
+      flexer: {
+        flex: 2,
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "center",
       },
     });
     return styles;
@@ -222,15 +236,3 @@ function MediaQuery() {
 }
 
 export default MediaQuery();
-
-
-/*
-
-  display:"flex",
-        flexDirection:"row",
-        flex:0.5,
-        flexShrink:0.5,
-        justifyContent:"space-between",      
-        flexWrap:"wrap",
-        flexDirection: "column",
-*/
