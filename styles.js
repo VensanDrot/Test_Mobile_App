@@ -115,7 +115,7 @@ function MediaQuery() {
   }
 
   // width for big devices
-  if (color.width > 700) {
+  if (color.width >= 600) {
     const styles = StyleSheet.create({
       // login display settings
       form: {
