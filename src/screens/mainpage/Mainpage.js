@@ -87,7 +87,7 @@ const Mainpage = () => {
             }
           });
           smth = smth[g.id - 1];
-          let url = { uri: smth.toString() };
+          let url = { uri: smth};
 
           return (
             <View style={styles.vi_cont} key={g.id}>
