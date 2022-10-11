@@ -10,6 +10,8 @@ const Mainpage = () => {
   const [Users, SetUsers] = useState([]);
   const [UserImg, SetUserimg] = useState([]);
   const [Urlss, SetUrlss] = useState([]);
+  
+
 
   //reduce posts
   const gettingPost = (res) => {
@@ -27,18 +29,14 @@ const Mainpage = () => {
 
   //Photo reducer
   const userPhotos = (data) => {
-    let max_id = 0;
-    Users.map((g) => {
-      if (g.id > max_id) {
-        max_id = g.id;
-      }
-    });
-
     const arr = [];
+
     const photo = data.reduce((acc, curr) => {
-      if (!acc.includes(curr.albumId) && curr.albumId <= max_id) {
+      if (!acc.includes(curr.albumId) ) {
         arr.push(curr);
         acc.push(curr.albumId);
+      }
+      else{
       }
 
       return acc;
@@ -57,7 +55,7 @@ const Mainpage = () => {
   }).then((res) => res.json());
 
   // Get photo
-  const respon = fetch("https://jsonplaceholder.typicode.com/photos/", {
+  const respon = fetch("https://jsonplaceholder.typicode.com/photos?albumId=1&&albumId=2&&albumId=3&&albumId=4&&albumId=5&&albumId=6&&albumId=7&&albumId=8&&albumId=9&&albumId=10", {
     method: "get",
   }).then((res) => res.json());
 
@@ -74,21 +72,31 @@ const Mainpage = () => {
     respon.then((data) => {
       userPhotos(data);
     });
+
+   
   }, []);
+
+  const getUr = (id) => {
+  
+  let  smth = UserImg.map((f) => {
+      if (f.albumId === id) {
+        return f.url;
+      }
+    });
+    smth = smth[id - 1];
+    return smth
+  }
 
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: "center" }}>
       <View style={styles.flexer}>
         {Users.map((g) => {
-          let smth = UserImg.map((f) => {
-            if (f.albumId === g.id) {
-              return f.url.toString();
-            }
-          });
-          smth = smth[g.id - 1];
-          let url = { uri: smth};
-
+          
+          getUr(g.id)
+          getUr(g.id)
+          let url = { uri: getUr(g.id) };
+          
           return (
             <View style={styles.vi_cont} key={g.id}>
               <Image source={url} style={styles.vi_image} />
